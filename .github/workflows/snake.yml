@@ -2,8 +2,8 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 */12 * * *"   # har 12 ghante mein auto update
-  workflow_dispatch:          # manual run ka button
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -23,6 +23,17 @@ jobs:
           outputs: |
             dist/github-snake-dark.svg?palette=github-dark&color_snake=%2300c647
             dist/github-snake.svg
+
+      - name: Remove progress bar (crop SVG height)
+        run: |
+          python3 - <<'EOF'
+          import re, glob
+          for f in glob.glob("dist/*.svg"):
+              s = open(f, encoding="utf-8").read()
+              tag = re.search(r"<svg[^>]*>", s).group(0)
+              s = s.replace(tag, tag.replace("192", "150"), 1)
+              open(f, "w", encoding="utf-8").write(s)
+          EOF
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
