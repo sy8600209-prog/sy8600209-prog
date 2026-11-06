@@ -75,14 +75,10 @@ B.Tech CSE student and aspiring AI/ML engineer. I build intelligent, data-driven
 
 ---
 
-## 📊 GitHub Activity
+## 🐍 GitHub Activity
 
 <p align="center">
-  <img src="https://ghchart.rshah.org/0e75b6/sy8600209-prog" alt="GitHub contribution chart" />
-</p>
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com/?user=sy8600209-prog&hide_border=true" alt="GitHub streak" />
+  <img src="https://raw.githubusercontent.com/sy8600209-prog/sy8600209-prog/output/github-snake-dark.svg" alt="Snake animation" />
 </p>
 
 ---
